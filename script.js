@@ -7,18 +7,17 @@ const hr = document.querySelector(".hr");
 const min = document.querySelector(".min");
 const sec = document.querySelector(".sec");
 const fulldate = document.querySelector(".fulldate");
-// const calender = document.querySelector(".calender");
 const dateTimePicker = document.getElementById("dateTimePicker");
 const is24HourBtn = document.querySelector(".is24HourBtn");
 const currTimeFormat = document.querySelector(".currTimeFormat");
 const alarmEl = document.querySelector(".alarmEl");
-//CHECK THE STORED THEME MODE IN THE LOCALSTORAGE AND APPLY IT TO THE DOC ELEMENT
 
 document.addEventListener("DOMContentLoaded", clock);
 
 let is24Hour = false;
 
-// RETRIEVE CURRENT THEME FROM LOCAL STORAGE
+//CHECK THE STORED THEME MODE IN THE LOCALSTORAGE AND APPLY IT TO THE DOC ELEMENT
+
 if (localStorage.getItem("theme") === "dark") {
   rootEl.classList.add("dark");
   modeIcon.setAttribute("name", "moon-outline");
@@ -76,7 +75,7 @@ is24HourBtn.addEventListener("click", () => {
 
 //ALARM CLOCK
 const audio = new Audio();
-audio.src = "/nokia_alarm_clock.mp3";
+audio.src = "nokia_alarm_clock.mp3";
 audio.loop = true;
 
 function ringAlarm() {

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="digitalclock.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <title>Digital Clock</title>
+  </head>
+
+  <body
+    class="flex justify-center items-center min-h-screen transition-colors duration-500"
+  >
+    <section
+      class="sectionShadow bg-[var(--bg)] text-[var(--text-primary)] p-7 max-w-xl w-full rounded-3xl"
+    >
+      <main
+        class="mainShadow flex flex-col-reverse md:flex-row gap-6 py-8 px-6 rounded-2xl"
+      >
+        <!-- ALARM CONTROL WIDGETs-->
+        <aside class="flex flex-row justify-between md:flex-col md:gap-6 px-1">
+          <div
+            class="flex flex-col items-center gap-2 text-[var(--text-secondary)] text-center"
+          >
+            <h3 class="font-semibold text-sm">Alarm</h3>
+
+            <button
+              class="widgetBtn text-sm bg-[var(--bg)] rounded-2xl p-3 w-20 flex flex-col items-center justify-center gap-1 font-semibold"
+            >
+              <ion-icon name="alarm-outline" class="w-6 h-6"></ion-icon>
+              <span class="alarmEl">00:00</span>
+            </button>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 text-[var(--text-secondary)] text-center"
+          >
+            <h3 class="font-semibold text-sm">Mute</h3>
+
+            <button
+              class="muteAlarmBtn widgetBtn text-sm bg-[var(--bg)] rounded-2xl p-3 w-20 flex flex-col items-center justify-center gap-1 font-semibold"
+            >
+              <ion-icon name="volume-mute-outline" class="w-6 h-6"></ion-icon>
+              <span>Alarm</span>
+            </button>
+          </div>
+        </aside>
+
+        <!-- RIGHT PANEL -->
+        <aside class="flex flex-col grow items-center">
+          <!-- DATE TIME PICKER + THEME TOGGLE WIDGET-->
+          <div
+            class="flex flex-col-reverse md:flex-row w-full justify-between items-center"
+          >
+            <input
+              type="datetime-local"
+              id="dateTimePicker"
+              class="neoInput w-full mb-6 px-4 py-3 rounded-2xl outline-none"
+            />
+
+            <div class="flex justify-end w-full mb-6">
+              <div
+                class="widgetBtnContainer w-16 h-9 rounded-full p-1 bg-blue-300 relative flex items-center"
+              >
+                <button
+                  class="widgetBtn widgetBtnToggle cursor-pointer text-sm bg-[#e6e9f0] rounded-full h-8 w-8 flex items-center justify-center absolute transition-all duration-300"
+                >
+                  <ion-icon
+                    name="sunny-outline"
+                    class="modeIcon h-5 w-5 text-[#2d3748]"
+                  ></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!--DIGITAL CLOCK -->
+          <section class="flex flex-col gap-4 text-center w-full">
+            <div
+              class="grid grid-cols-6 justify-center font-semibold text-[var(--text-primary)] w-full"
+            >
+              <h2 class="hr text-5xl md:text-6xl"></h2>
+              <p
+                class="text-xl md:text-3xl h-full flex flex-col justify-center items-center"
+              >
+                :
+              </p>
+              <h2 class="min text-5xl md:text-6xl"></h2>
+              <p
+                class="text-xl md:text-3xl h-full flex flex-col justify-center items-center"
+              >
+                :
+              </p>
+              <h2 class="sec text-5xl md:text-6xl"></h2>
+              <small
+                class="text-sm font-bold ml-2 flex flex-col justify-end"
+              ></small>
+            </div>
+
+            <p class="fulldate text-sm font-semibold text-[#718096]"></p>
+
+            <!-- CLOCK TYPE CONTROL BUTTONS-->
+            <div class="flex flex-row justify-end px-1">
+              <div
+                class="flex flex-col items-center gap-2 text-[var(--text-secondary)] text-center"
+              >
+                <h3 class="currTimeFormat font-semibold text-sm">
+                  <!-- 24 Hour -->
+                </h3>
+
+                <button
+                  class="is24HourBtn widgetBtn text-sm bg-[var(--bg)] rounded-2xl p-3 w-20 flex flex-col items-center justify-center gap-1 font-semibold"
+                >
+                  <ion-icon name="time-outline" class="w-6 h-6"></ion-icon>
+                  <span class="calender tracking-tight">Clock</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <footer></footer>
+    </section>
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      defer
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      defer
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="digitalclock.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+:root {
+  --bg-color: #e6e9f0;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --light-shadow: #ffffff;
+  --dark-shadow: #b8c2cc;
+}
+
+.dark {
+  /* --bg: #0f172a; */
+  --bg: #333;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --light-shadow: rgba(255, 255, 255, 0.05);
+  --dark-shadow: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.sectionShadow {
+  box-shadow:
+    15px 15px 30px var(--dark-shadow),
+    -15px -15px 30px var(--light-shadow);
+}
+
+.mainShadow {
+  box-shadow:
+    inset 8px 8px 16px var(--dark-shadow),
+    inset -8px -8px 16px var(--light-shadow);
+}
+
+.widgetBtn {
+  box-shadow:
+    5px 5px 10px var(--dark-shadow),
+    -5px -5px 10px var(--light-shadow);
+  transition: all 0.3s ease;
+}
+
+.widgetBtn:active {
+  box-shadow:
+    inset 4px 4px 8px var(--dark-shadow),
+    inset -4px -4px 8px var(--light-shadow);
+}
+
+.neoInput {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.15),
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+
+  transition: all 0.2s ease;
+}
+
+.neoInput:focus {
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.15),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+
+.neoInput::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+}

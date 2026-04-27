@@ -93,7 +93,10 @@ dateTimePicker.addEventListener("change", (e) => {
   const alarmTime = new Date(value).getTime();
   const currTime = Date.now();
 
-  alarmEl.textContent = `${new Date(value).getHours()} : ${new Date(value).getMinutes()}`;
+  let alarmHr = new Date(value).getHours();
+  let alarmMin = new Date(value).getMinutes();
+
+  alarmEl.textContent = `${alarmHr < 10 ? "0" + alarmHr : alarmHr} : ${alarmMin < 10 ? "0" + alarmMin : alarmMin}`;
 
   if (alarmTime <= currTime) {
     alert("Please select a future time");

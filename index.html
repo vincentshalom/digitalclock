@@ -55,13 +55,18 @@
         <aside class="flex flex-col grow items-center">
           <!-- DATE TIME PICKER + THEME TOGGLE WIDGET-->
           <div
-            class="flex flex-col-reverse md:flex-row w-full justify-between items-center"
+            class="flex flex-col-reverse md:flex-row w-full justify-between items-center mb-4"
           >
-            <input
-              type="datetime-local"
-              id="dateTimePicker"
-              class="neoInput w-full mb-6 px-4 py-3 rounded-2xl outline-none"
-            />
+            <label class="flex flex-col gap-1">
+              <h3 class="font-semibold text-sm text-[#718096] tracking-tight">
+                Set Time
+              </h3>
+              <input
+                type="datetime-local"
+                id="dateTimePicker"
+                class="neoInput w-full px-4 py-3 rounded-2xl outline-none border-2 border-#333"
+              />
+            </label>
 
             <div class="flex justify-end w-full mb-6">
               <div
